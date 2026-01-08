@@ -22,7 +22,7 @@ Review items align with Priority Stack from Core Principles.
 - [ ] All tests pass (CI green)
 
 ### 4. Code Quality
-- [ ] Type hints on function signatures
+- [ ] Type annotations on function signatures
 - [ ] Functions are small and testable
 - [ ] No drive-by refactors unrelated to PR scope
 

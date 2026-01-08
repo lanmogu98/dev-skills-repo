@@ -1,6 +1,6 @@
 ---
 name: dev-workflow
-version: "1.1.0"
+version: "1.2.0"
 description: "Engineering workflow for development tasks in existing codebases. Use when: implementing features, fixing bugs, writing tests, refactoring code, preparing commits, creating PRs, reviewing code, or planning development tasks. Covers the full cycle from code exploration to pull request. Not needed for one-off scripts or general code explanations outside project context."
 ---
 

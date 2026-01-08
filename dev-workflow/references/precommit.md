@@ -5,7 +5,11 @@
 ## Step 1: VERIFY TESTS PASS
 
 ```bash
-pytest tests/ -v  # or project's test command
+# Run project's test command
+pytest tests/ -v        # Python
+npm test                # Node.js
+go test ./...           # Go
+cargo test              # Rust
 ```
 
 - ✅ All tests must pass (tests should already exist from implementation phase)
@@ -32,7 +36,7 @@ pytest tests/ -v  # or project's test command
 | Behavior (user-facing) | `CHANGELOG.md`, `README.md` |
 | CLI / Configuration | `README.md` (usage), `DEVELOPER_GUIDE.md` (config) |
 | Project Structure | `DEVELOPER_GUIDE.md` (architecture) |
-| Dependencies | `pyproject.toml` + `README.md` (installation) |
+| Dependencies | Dependency file + `README.md` (installation) |
 
 ## Step 4: UPDATE TASK STATUS (if applicable)
 
@@ -47,7 +51,7 @@ Types: `feat` | `fix` | `docs` | `test` | `chore` | `refactor`
 
 ```bash
 git commit -m "feat(scraper): add video content type detection"
-git commit -m "fix(cli): handle empty DataFrame edge case"
+git commit -m "fix(cli): handle empty input edge case"
 git commit -m "docs: update README with new CLI flags"
 ```
 

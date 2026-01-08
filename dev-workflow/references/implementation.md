@@ -14,7 +14,7 @@ Before writing implementation code, confirm:
 
 ## Code Standards
 
-- Type hints on all function parameters and return values
+- Type annotations on function parameters and return values
 - Small, testable functions
 - Keep failure modes explicit; avoid silent `except:` catches
 - No secrets in code or logs — use env vars; prefer `.env` locally (not committed)
