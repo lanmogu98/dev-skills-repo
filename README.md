@@ -6,7 +6,7 @@ Personal skill collection for AI coding agents. Compatible with [OpenSkills](htt
 
 ```bash
 npm i -g openskills
-openskills install lanmogu98/skills
+openskills install lanmogu98/dev-skills-repo
 openskills sync
 ```
 
