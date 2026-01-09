@@ -17,6 +17,8 @@ Brief description of the change.
 ## Why
 Link to issue/task, or explain the motivation.
 
+Closes #123  <!-- Auto-closes GitHub issue on merge; omit if no issue -->
+
 ## How
 Key implementation decisions or tradeoffs.
 
@@ -29,7 +31,21 @@ Key implementation decisions or tradeoffs.
 - [ ] CHANGELOG.md updated
 - [ ] Docs updated (if user-facing)
 - [ ] Task status updated (if project uses task tracking)
+- [ ] GitHub issue linked with `Closes #xxx` (if applicable)
 ```
+
+### Closing GitHub Issues
+
+If the task has a linked GitHub issue (from roadmap's `GH` column):
+
+| Keyword | Effect |
+|---------|--------|
+| `Closes #123` | Auto-closes issue when PR merges |
+| `Fixes #123` | Same as Closes |
+| `Resolves #123` | Same as Closes |
+| `Closes #123, #456` | Closes multiple issues |
+
+Place the keyword in the PR description (not title) for GitHub to detect it.
 
 ## Self-Review Before Requesting Review
 

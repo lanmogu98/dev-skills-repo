@@ -1,6 +1,6 @@
 ---
 name: dev-workflow
-version: "1.3.0"
+version: "1.4.0"
 description: "REQUIRED workflow for all code changes. MUST load FIRST before planning or implementing features, bugs, refactoring, tests, PRs. Covers full cycle from exploration to pull request. Skip only for: one-off scripts, explanations outside project context."
 ---
 
@@ -87,11 +87,23 @@ Types: `feat` | `fix` | `docs` | `test` | `chore` | `refactor`
 
 ### Task System (if project uses task tracking)
 
-- **Roadmap**: e.g., `FUTURE_ROADMAP.md` — current and upcoming tasks
-- **Design docs**: e.g., `docs/DESIGN_REMAINING_ISSUES.md` — implementation details
-- **Archive**: e.g., `docs/roadmap/ROADMAP_ARCHIVE.md` — completed items
+**Bug Reporting Flow:**
 
-Status flow: `Pending` → `In Progress` → `Done` → `Archived`
+```
+GitHub Issues (external)  →  FUTURE_ROADMAP.md (internal)  →  PR closes issue
+      ↓                              ↓                              ↓
+ Users report bugs           Maintainer triages,            Agent works from
+ & request features          adds to roadmap with GH#       roadmap only
+```
+
+- **GitHub Issues** — Entry point for users (bugs, feature requests)
+- **Roadmap** (`FUTURE_ROADMAP.md`) — Agent's single source of truth; includes `GH` column linking to issues
+- **Design docs** (`docs/DESIGN_REMAINING_ISSUES.md`) — Implementation details for complex tasks
+- **Archive** — Completed items moved after merge
+
+**Key rule:** Agents read the roadmap, not GitHub Issues directly. PRs use `Closes #123` to auto-close linked issues.
+
+Status flow: `Pending` → `In Progress` → `In Review` → `Done` → `Archived`
 
 ### Typical Task Flow
 
