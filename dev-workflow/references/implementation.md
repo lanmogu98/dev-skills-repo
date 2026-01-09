@@ -2,9 +2,19 @@
 
 > **Prerequisite:** Design phase complete. Tests are written and failing.
 
+## Prerequisites Checklist
+
+Before writing implementation code, confirm:
+
+- [ ] I have completed `design.md` (or `bugfix.md` for bug fixes)
+- [ ] I have written tests that define the expected behavior
+- [ ] My tests fail for the expected reason (not due to syntax errors)
+
+**If any answer is NO → Go back to `design.md` or `bugfix.md`.**
+
 ## Code Standards
 
-- Type hints on all function parameters and return values
+- Type annotations on function parameters and return values
 - Small, testable functions
 - Keep failure modes explicit; avoid silent `except:` catches
 - No secrets in code or logs — use env vars; prefer `.env` locally (not committed)

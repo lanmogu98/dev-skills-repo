@@ -1,15 +1,37 @@
 ---
 name: dev-workflow
-description: "Engineering workflow for development tasks in existing codebases. Use when: implementing features, fixing bugs, writing tests, refactoring code, preparing commits, creating PRs, reviewing code, or planning development tasks. Covers the full cycle from code exploration to pull request. Not needed for one-off scripts or general code explanations outside project context."
+version: "1.3.0"
+description: "REQUIRED workflow for all code changes. MUST load FIRST before planning or implementing features, bugs, refactoring, tests, PRs. Covers full cycle from exploration to pull request. Skip only for: one-off scripts, explanations outside project context."
 ---
 
 # Dev Workflow
 
 Engineering standards for humans and LLM agents working in codebases.
 
+## Pre-flight Checklist (Do This FIRST)
+
+> **STOP. Complete this checklist BEFORE any planning or coding.**
+
+- [ ] **Create branch**: `git checkout -b feature/<name>` or `fix/<name>` from main
+- [ ] **Set task status**: Mark as "In Progress" (if project uses task tracking)
+- [ ] **Read relevant code**: Code is truth; docs may be outdated
+
+Then load the appropriate reference file based on your task type (see Task Router below).
+
+## Relationship with Plan Mode / Planning Tools
+
+If your IDE/agent has a built-in planning mode:
+
+1. **Load this skill BEFORE entering plan mode**
+2. **Complete the Pre-flight Checklist first**
+3. Use plan mode for technical design, but follow this workflow for process
+4. The `exploration → design → implementation` flow applies regardless of planning tools
+
+> Plan mode helps you think. This workflow ensures you don't skip steps.
+
 ## When to Load This Skill
 
-**Load this skill immediately if the task involves ANY of:**
+**MUST load this skill if the task involves ANY of:**
 - Implementing a feature or enhancement
 - Fixing a bug
 - Writing or modifying tests
@@ -45,6 +67,7 @@ Load references based on current task. Use `cat <base_directory>/references/<fil
 |-----------|----------------|
 | Start new task / understand code | `exploration.md` |
 | Design feature / write tests | `design.md` |
+| **Fix a bug** | `bugfix.md` |
 | Write implementation code | `implementation.md` |
 | Prepare commit | `precommit.md` |
 | Create or update PR | `pullrequest.md` |
@@ -62,21 +85,27 @@ For tasks spanning multiple phases, load references in sequence.
 
 Types: `feat` | `fix` | `docs` | `test` | `chore` | `refactor`
 
-### Task System (Roadmap-centric)
+### Task System (if project uses task tracking)
 
-- **Read first**: `FUTURE_ROADMAP.md` (Now/Next, ≤1-2 screens)
-- **Implementation details**: `docs/DESIGN_REMAINING_ISSUES.md`
-- **History**: `docs/roadmap/ROADMAP_ARCHIVE.md` (read-only, don't pollute)
+- **Roadmap**: e.g., `FUTURE_ROADMAP.md` — current and upcoming tasks
+- **Design docs**: e.g., `docs/DESIGN_REMAINING_ISSUES.md` — implementation details
+- **Archive**: e.g., `docs/roadmap/ROADMAP_ARCHIVE.md` — completed items
 
-Status flow: `Pending` → `In Progress` → `Done (recent)` → `Archived`
+Status flow: `Pending` → `In Progress` → `Done` → `Archived`
 
 ### Typical Task Flow
 
-For a complete task, load references in sequence:
+**For new features:**
 1. `exploration.md` — Understand code, confirm scope, set status to In Progress
 2. `design.md` — **Define behavior via tests BEFORE coding**
 3. `implementation.md` — Write code to make tests pass
 4. `precommit.md` — Run tests, update docs, commit
 5. `pullrequest.md` — Create PR, self-review, respond to feedback
 
-> **Critical:** Do NOT skip step 2. If you find yourself writing implementation code without tests, STOP and go back to `design.md`.
+**For bug fixes:**
+1. `exploration.md` — Understand code, locate bug area
+2. `bugfix.md` — **Reproduce → Write failing test → Fix → Verify**
+3. `precommit.md` — Run tests, update docs/CHANGELOG, commit
+4. `pullrequest.md` — Create PR
+
+> **Critical:** Do NOT skip the design/reproduce step. If you find yourself writing code without tests, STOP.
