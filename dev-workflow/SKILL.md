@@ -1,16 +1,37 @@
 ---
 name: dev-workflow
-version: "1.2.0"
-description: "Engineering workflow for development tasks in existing codebases. Use when: implementing features, fixing bugs, writing tests, refactoring code, preparing commits, creating PRs, reviewing code, or planning development tasks. Covers the full cycle from code exploration to pull request. Not needed for one-off scripts or general code explanations outside project context."
+version: "1.3.0"
+description: "REQUIRED workflow for all code changes. MUST load FIRST before planning or implementing features, bugs, refactoring, tests, PRs. Covers full cycle from exploration to pull request. Skip only for: one-off scripts, explanations outside project context."
 ---
 
 # Dev Workflow
 
 Engineering standards for humans and LLM agents working in codebases.
 
+## Pre-flight Checklist (Do This FIRST)
+
+> **STOP. Complete this checklist BEFORE any planning or coding.**
+
+- [ ] **Create branch**: `git checkout -b feature/<name>` or `fix/<name>` from main
+- [ ] **Set task status**: Mark as "In Progress" (if project uses task tracking)
+- [ ] **Read relevant code**: Code is truth; docs may be outdated
+
+Then load the appropriate reference file based on your task type (see Task Router below).
+
+## Relationship with Plan Mode / Planning Tools
+
+If your IDE/agent has a built-in planning mode:
+
+1. **Load this skill BEFORE entering plan mode**
+2. **Complete the Pre-flight Checklist first**
+3. Use plan mode for technical design, but follow this workflow for process
+4. The `exploration → design → implementation` flow applies regardless of planning tools
+
+> Plan mode helps you think. This workflow ensures you don't skip steps.
+
 ## When to Load This Skill
 
-**Load this skill immediately if the task involves ANY of:**
+**MUST load this skill if the task involves ANY of:**
 - Implementing a feature or enhancement
 - Fixing a bug
 - Writing or modifying tests
