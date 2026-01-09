@@ -1,7 +1,8 @@
 ---
 name: dev-workflow
-version: "1.4.0"
 description: "REQUIRED workflow for all code changes. MUST load FIRST before planning or implementing features, bugs, refactoring, tests, PRs. Covers full cycle from exploration to pull request. Skip only for: one-off scripts, explanations outside project context."
+metadata:
+  version: "1.4.0"
 ---
 
 # Dev Workflow
