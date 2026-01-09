@@ -6,6 +6,7 @@
 
 Before any code changes:
 
+- [ ] **Note the GitHub issue** — If bug came from roadmap's `GH` column, note the issue number (e.g., `#123`)
 - [ ] **Confirm the bug exists** — Run the failing scenario manually or via test
 - [ ] **Identify exact failure** — What happens vs what should happen?
 - [ ] **Check if already fixed** — Search recent commits, PRs, issues
@@ -71,7 +72,10 @@ Before committing a bug fix:
 [ ] All tests pass
 [ ] Docs updated (if applicable)
 [ ] CHANGELOG updated (if user-visible)
+[ ] GitHub issue noted for PR (if applicable)
 ```
+
+> **Tip:** If this bug has a GitHub issue (from roadmap's `GH` column), include `Closes #123` in your PR description to auto-close it on merge.
 
 ---
 
